@@ -12,8 +12,8 @@ public class BrasilApiRest : IBrasilApi
     public async Task<ResponseGenerico<EnderecoModel>> BuscarEnderecoCep(string cep)
     {
         var request = new HttpRequestMessage(HttpMethod.Get, $"https://brasilapi.com.br/api/cep/v1/{cep}");
-        var response = new ResponseGenerico<EnderecoModel>();
 
+        var response = new ResponseGenerico<EnderecoModel>();
         using (var client = new HttpClient())
         {
             var responseBrasilApi = await client.SendAsync(request);
@@ -36,7 +36,7 @@ public class BrasilApiRest : IBrasilApi
 
     public async Task<ResponseGenerico<List<BancoModel>>> BuscarTodosBancos()
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, "https://brasilapi.com.br/api/banks/v1");
+        var request = new HttpRequestMessage(HttpMethod.Get, $"https://brasilapi.com.br/api/banks/v1");
         var response = new ResponseGenerico<List<BancoModel>>();
 
         using (var client = new HttpClient())
@@ -61,7 +61,7 @@ public class BrasilApiRest : IBrasilApi
 
     public async Task<ResponseGenerico<BancoModel>> BuscarBanco(string codigoBanco)
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, $"https://brasilapi.com.br/api/banks/{codigoBanco}");
+        var request = new HttpRequestMessage(HttpMethod.Get, $"https://brasilapi.com.br/api/banks/v1/{codigoBanco}");
         var response = new ResponseGenerico<BancoModel>();
 
         using (var client = new HttpClient())

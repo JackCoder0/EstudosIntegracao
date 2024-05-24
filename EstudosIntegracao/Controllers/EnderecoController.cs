@@ -5,7 +5,7 @@ using System.Net;
 namespace EstudosIntegracao.Controllers;
 
 [ApiController]
-[Route("api/v1/controller")]
+//[Route("api/v1/controller")]
 public class EnderecoController : ControllerBase
 {
     public readonly IEnderecoService _enderecoService;
@@ -14,7 +14,7 @@ public class EnderecoController : ControllerBase
         _enderecoService = enderecoService;
     }
 
-    [HttpGet("busca/{cep}")]
+    [HttpGet("buscar/cep/{cep}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]

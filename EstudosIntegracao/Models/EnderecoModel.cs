@@ -14,7 +14,7 @@ public class EnderecoModel
     public string? Cidade { get; set; }
 
     [JsonPropertyName("neighborhood")]
-    public string? Região { get; set; }
+    public string? Regiao { get; set; }
 
     [JsonPropertyName("street")]
     public string? Rua { get; set; }

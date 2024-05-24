@@ -6,7 +6,7 @@ using System.Net;
 namespace EstudosIntegracao.Controllers;
 
 [ApiController]
-[Route("api/v1/controller")]
+//[Route("procurar")]
 public class BancoController : ControllerBase
 {
     public readonly IBancoService _bancoService;
@@ -16,7 +16,7 @@ public class BancoController : ControllerBase
         _bancoService = bancoService;
     }
 
-    [HttpGet("busca/todos")]
+    [HttpGet("buscar/todos")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -34,7 +34,7 @@ public class BancoController : ControllerBase
         }
     }
 
-    [HttpGet("busca/{codigoBanco}")]
+    [HttpGet("buscar/{codigoBanco}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
